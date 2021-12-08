@@ -1,5 +1,6 @@
 package ec.edu.ups.pw2.demoapp2.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,8 +8,11 @@ import javax.persistence.Id;
 public class Persona {
 
 	@Id
+	@Column(name = "per_cedula")
 	private String cedula;
+	@Column(name = "per_nombre")
 	private String nombre;
+	@Column(name = "per_direccion")
 	private String direccion;
 	public String getCedula() {
 		return cedula;
