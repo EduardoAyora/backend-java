@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ec.edu.ups.pw2.demoapp2.ON.CalculadoraON;
+import ec.edu.ups.pw2.demoapp2.ON.CalculadoraONLocal;
 
 /**
  * Servlet implementation class CalculadoraBasica
@@ -19,7 +20,7 @@ public class CalculadoraBasica extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@Inject
-	private CalculadoraON calcON;
+	private CalculadoraONLocal calcON;
        
     /**
      * @see HttpServlet#HttpServlet()

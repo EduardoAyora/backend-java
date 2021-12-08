@@ -1,9 +1,9 @@
 package ec.edu.ups.pw2.demoapp2.ON;
 
-import javax.ejb.Local;
+import javax.ejb.Remote;
 
-@Local
-public interface CalculadoraONLocal {
-	
+@Remote
+public interface CalculadoraONRemote {
+
 	public double suma(double a, double b);
 }
