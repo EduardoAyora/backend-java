@@ -36,7 +36,7 @@ public class CalculadoraBasica extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
-		double n = calcON.suma(30, 80);
+		double n = calcON.suma(30, 60);
 		response.getOutputStream().println("<h1>UPS</h1>" + n);
 	}
 
