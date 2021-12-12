@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -18,6 +20,7 @@ public class Factura implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int numero;
 	private Date fecha;
 	
@@ -25,7 +28,7 @@ public class Factura implements Serializable {
 	@JoinColumn(name = "per_cedula")
 	private Persona cliente;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="fac_codigo")
 	private List<DetalleFactura> detalles;
 	

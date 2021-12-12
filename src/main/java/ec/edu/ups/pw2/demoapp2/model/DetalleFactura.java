@@ -2,6 +2,7 @@ package ec.edu.ups.pw2.demoapp2.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +25,7 @@ public class DetalleFactura implements Serializable {
 	private int cantidad;
 	@Column(name = "det_precio")
 	private double precio;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "pro_codigo")
 	private Producto producto;
 	public int getCodigo() {
