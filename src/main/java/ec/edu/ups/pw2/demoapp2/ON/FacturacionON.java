@@ -7,15 +7,23 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import ec.edu.ups.pw2.demoapp2.dao.FacturaDAO;
+import ec.edu.ups.pw2.demoapp2.dao.PersonaDAO;
 import ec.edu.ups.pw2.demoapp2.model.DetalleFactura;
 import ec.edu.ups.pw2.demoapp2.model.Factura;
+import ec.edu.ups.pw2.demoapp2.model.Persona;
 
 @Stateless
 public class FacturacionON implements FacturacionONRemote {
 	@Inject
 	private FacturaDAO facturaDAO;
+	@Inject
+	private PersonaDAO personaDAO;
 	
 	public void insertar(Factura f) throws Exception {
+		Persona persona = personaDAO.find(f.getCliente().getCedula());
+		if (persona == null) {
+			personaDAO.insert(f.getCliente());
+		}
 		facturaDAO.insert(f);
 	}
 	
@@ -32,6 +40,5 @@ public class FacturacionON implements FacturacionONRemote {
         }
 		System.out.println(facturasEnTexto);
 		return facturasEnTexto;
-		
 	}
 }

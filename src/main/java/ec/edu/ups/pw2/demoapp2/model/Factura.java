@@ -24,7 +24,8 @@ public class Factura implements Serializable {
 	private int numero;
 	private Date fecha;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	//@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne()
 	@JoinColumn(name = "per_cedula")
 	private Persona cliente;
 	

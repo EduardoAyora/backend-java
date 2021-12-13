@@ -24,4 +24,15 @@ public class PersonaON implements PersonaONLocal, PersonaONRemote {
             throw ex;
         }
 	}
+	
+	public Persona buscar(String cedula) {
+		Persona persona;
+		try {
+			persona = personaDAO.find(cedula);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            throw ex;
+        }
+		return persona;
+	}
 }

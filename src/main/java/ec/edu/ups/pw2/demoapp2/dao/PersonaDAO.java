@@ -25,6 +25,11 @@ public class PersonaDAO {
 		return persona;
 	}
 	
+	public Persona find(String cedula) {
+		Persona persona = em.find(Persona.class, cedula);
+		return persona;
+	}
+	
 	public void delete(int id) {
 		Persona persona = em.find(Persona.class, id);
 		em.remove(persona);
